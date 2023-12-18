@@ -4,7 +4,10 @@ const clearButton = document.getElementById("clearButton");
 const taskContainer = document.querySelector(".container");
 const noTask = document.getElementById("noTask");
 const savedInputs = localStorage.getItem("tasks");
-const savedTasks = JSON.parse(localStorage.getItem("tasks"));
+let savedTasks=[];
+if (!savedInputs==[]){
+  savedTasks=JSON.parse(localStorage.getItem("tasks"));
+}
 
 clearButton.disabled = true;
 const addNewTask = () => {
